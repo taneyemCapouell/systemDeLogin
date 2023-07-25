@@ -2,7 +2,23 @@ const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
 const app = express();
+const crypto = require('crypto');
 
+// Fonction de chiffrement
+function encrypt(text, secret) {
+  const cipher = crypto.createCipher('aes-256-cbc', secret);
+  let encrypted = cipher.update(text, 'utf8', 'hex');
+  encrypted += cipher.final('hex');
+  return encrypted;
+}
+
+// Fonction de déchiffrement
+function decrypt(encrypted, secret) {
+  const decipher = crypto.createDecipher('aes-256-cbc', secret);
+  let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+  decrypted += decipher.final('utf8');
+  return decrypted;
+}
 const boydParser = require('body-parser');
 app.use(boydParser.json())
 

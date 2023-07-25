@@ -1,0 +1,94 @@
+<div class="content-wrapper">
+  <div class="content-header">
+    <div class="container">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="mt-0">Add student</h1>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active">Dashboard</li>
+            <li class="breadcrumb-item">
+              <a href="/login" routerLink="login">Login</a>
+            </li>
+          </ol>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </div>
+    <div class="col-md-12">
+      <!-- <img id="profile-img" width="500px" height="400px" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" -->
+      <!-- class="profile-img-card img-center" /> -->
+      <form class="form" action="">
+        <label class="mb-2" for="firstName"
+          >First name <span class="text-danger">*</span></label
+        >
+        <input
+          type="text"
+          [(ngModel)]="firstName"
+          [ngModelOptions]="{ standalone: true }"
+          class="form-control mb-2"
+          id="firstName"
+        />
+        <div class="form-group">
+          <label class="mb-2" for="lastName"
+            >Last name <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            [(ngModel)]="lastName"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control mb-2"
+            id="lastName"
+          />
+        </div>
+        <div class="form-group">
+          <label class="mb-2" for="email"
+            >Email <span class="text-danger">*</span></label
+          >
+          <input
+            type="email"
+            [(ngModel)]="email"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control mb-2"
+            id="email"
+          />
+        </div>
+        <div class="form-group">
+          <label class="mb-2" for="address"
+            >Address <span class="text-danger">*</span></label
+          >
+          <input
+            type="text"
+            [(ngModel)]="address"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control mb-2"
+            id="address"
+          />
+        </div>
+        <div class="form-group">
+          <label class="mb-2" for="phone"
+            >Phone <span class="text-danger">*</span></label
+          >
+          <input
+            type="number"
+            [(ngModel)]="phone"
+            [ngModelOptions]="{ standalone: true }"
+            class="form-control mb-2"
+            id="phone"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg mt-2 mb-2"
+          (click)="save()"
+        >
+          Save
+        </button>
+      </form>
+    </div>
+</div>
